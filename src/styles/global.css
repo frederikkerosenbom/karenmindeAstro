@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Grotesk";
+  src: url("/fonts/protogrotesk-regular.otf") format(".otf");
+}
+
+h1 {
+  font-family: "Grotesk", sans-serif;
+  color: #fff0bd;
+  font-size: 50px;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: "Cherry Bomb One", system-ui;
+  color: #fff0bd;
+  font-size: 45px;
+}
+h3 {
+  font-family: "Cherry Bomb One", system-ui;
+  color: #db3a00;
+  font-size: 30px;
+}
+h4 {
+  font-family: "Cherry Bomb One", system-ui;
+  color: #db3a00;
+  font-size: 25px;
+}
+h5 {
+  font-family: "Cherry Bomb One", system-ui;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+}
+li {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+}
