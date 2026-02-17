@@ -1,0 +1,92 @@
+---
+import Image from "astro/components/Image.astro";
+
+import ImageInstagram from "../assets/icon_instagram.webp";
+import ImageFacebook from "../assets/icon_facebook.webp";
+
+import ImageEn from "../assets/medie_sydhavn.webp";
+import ImageTo from "../assets/mad.webp";
+import ImageTre from "../assets/medie_3.webp";
+import ImageFire from "../assets/medie_4.webp";
+import ImageFem from "../assets/medie_5.webp";
+---
+
+<section class="medier_style">
+  <h2>FØLG MED I HVERDAGEN</h2>
+  <section class="sociale_medier">
+    <Image src={ImageInstagram} alt="" class="pic1" />
+    <Image src={ImageFacebook} alt="" class="pic2" />
+  </section>
+
+  <div class="gallery">
+    <div class="row top">
+      <Image src={ImageEn} alt="" class="pic1" />
+      <Image src={ImageTo} alt="" class="pic2" />
+    </div>
+
+    <div class="row bottom">
+      <Image src={ImageTre} alt="" class="pic3" />
+      <Image src={ImageFire} alt="" class="pic4" />
+      <Image src={ImageFem} alt="" class="pic5" />
+    </div>
+  </div>
+</section>
+<style>
+  /******************** Reset ***********************/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /*** padding ***/
+  .medier_style {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 20%;
+  }
+
+  body {
+    background-color: #db3a00;
+  }
+
+  .sociale_medier {
+    max-width: 36px;
+  }
+  /*****medie billed flex ****/
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .row {
+    display: flex;
+    gap: 40px;
+  }
+
+  .pic1 {
+    flex: 1.8;
+  }
+
+  .pic2 {
+    flex: 1.2;
+  }
+
+  .pic3,
+  .pic4,
+  .pic5 {
+    flex: 1;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>

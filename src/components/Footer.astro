@@ -1,0 +1,35 @@
+---
+import Image from "astro/components/Image.astro";
+
+import Karen from "../assets/karen_footer.webp";
+
+import FooterLogo from "../assets/logo_footer.webp";
+---
+
+<footer>
+  <div class="">
+    <Image src={Karen} alt="" class="karen_pic" />
+  </div>
+  <h1>Hello</h1>
+  <h2>KARENS MINDE</h2>
+  <p>Vi er også:</p>
+  <p>--> Sydhavnens bibliotek</p>
+  <div class="">
+    <Image src={FooterLogo} alt="" class="pic2" />
+  </div>
+</footer>
+<style>
+  * {
+    background-color:;
+  }
+  .karen_pic {
+    margin-top: -12%;
+  }
+
+  footer {
+    background-color: #fff0bd;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+</style>
