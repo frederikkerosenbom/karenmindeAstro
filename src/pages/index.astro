@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import SektionTo from "../components/SektionTo.astro";
+import Hero from "../components/Hero.astro";
 import Medier from "../components/Medier.astro";
 import Footer from "../components/Footer.astro";
 ---
@@ -11,14 +13,16 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <title>Astro</title>
   </head>
   <body>
+    <Hero />
+    <SektionTo />
     <Medier />
     <Footer />
   </body>

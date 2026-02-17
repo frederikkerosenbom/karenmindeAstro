@@ -1,0 +1,16 @@
+---
+import Hours from "./Hours.astro";
+import Welcome from "./Welcome.astro";
+---
+
+<div class="grid">
+  <Hours class="hours" />
+  <Welcome class="welcome" />
+</div>
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-inline: 16rem;
+  }
+</style>
