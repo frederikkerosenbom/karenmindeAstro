@@ -1,0 +1,172 @@
+---
+
+---
+
+<nav>
+  <ul class="menu">
+    <li><a href="#">ARRANGEMENTER</a></li>
+    <li><a href="#">CAFE KAREN</a></li>
+    <li>
+      <a href="#">UDLEJNING</a>
+      <ul class="dropdown">
+        <li><a href="#">KURSER/MØDER</a></li>
+        <li><a href="#">SELSKABER</a></li>
+        <li><a href="#">BESPISNING</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">OM HUSET</a>
+      <ul class="dropdown">
+        <li><a href="#">SYDHAVNENS SLOT</a></li>
+        <li><a href="#">BLIV FRIVILLIG</a></li>
+        <li><a href="#">BLIV MEDLEM</a></li>
+        <li><a href="#">KONTAKT</a></li>
+        <li><a href="#">ØVECONTAINER</a></li>
+        <li><a href="#">SPONSORER</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <button class="burger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </button>
+</nav>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+
+  const erfaringLink = document.querySelector(".erfaring-link");
+  const kompetenceLink = document.querySelector(".kompetence-link");
+  const opgaveLink1 = document.querySelector(".opgavelink");
+
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("active");
+      nav.classList.toggle("active");
+    });
+  }
+</script>
+
+<style>
+  nav {
+    position: absolute; /* <-- vigtigt */
+    top: 24px;
+    width: 80vw;
+    z-index: 9999; /* <-- vigtigt */
+    padding: 24px 40px;
+    place-self: center;
+  }
+
+  /* burger */
+  .burger {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff0bd;
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+    border-radius: 20px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    flex: 0 0 auto;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(30deg) translate(2px, 10px);
+    transition: 0.2s linear;
+    background-color: #db3a00;
+  }
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+    background-color: #db3a00;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-30deg) translate(1px, -6px);
+    transition: 0.2s linear;
+    background-color: #db3a00;
+  }
+  nav.active .menu {
+    display: block;
+    background-color: #fff0bd;
+  }
+
+  header > nav li > a:after {
+    content: "";
+  }
+  nav.active .menu li {
+    margin: 0px 10px;
+  }
+
+  nav.active .menu a {
+    text-decoration: none;
+  }
+
+  nav.active .menu li {
+    color: #db3a00;
+  }
+
+  @media (width > 600px) {
+    .burger {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+    }
+    nav li {
+      list-style: none;
+    }
+    nav a {
+      color: #fff0bd;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 25px;
+    }
+
+    nav ul li ul.dropdown li {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    nav .dropdown li a {
+      color: #db3a00;
+      z-index: 1000;
+    }
+    nav .dropdown li a:hover {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    nav ul li ul.dropdown {
+      width: min-content;
+      background-color: #fff0bd;
+      padding: 20px;
+      position: absolute;
+      z-index: 999;
+      display: none;
+    }
+    nav ul li:hover ul.dropdown {
+      display: block;
+    }
+  }
+</style>
