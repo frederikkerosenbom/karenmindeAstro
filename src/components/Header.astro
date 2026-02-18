@@ -3,6 +3,12 @@
 ---
 
 <nav>
+  <button class="burger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </button>
+
   <ul class="menu">
     <li><a href="#">ARRANGEMENTER</a></li>
     <li><a href="#">CAFE KAREN</a></li>
@@ -26,12 +32,6 @@
       </ul>
     </li>
   </ul>
-
-  <button class="burger">
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-  </button>
 </nav>
 
 <script>
@@ -52,10 +52,10 @@
 
 <style>
   nav {
-    position: absolute; /* <-- vigtigt */
+    position: absolute;
     top: 24px;
     width: 80vw;
-    z-index: 9999; /* <-- vigtigt */
+    z-index: 9999;
     padding: 24px 40px;
     place-self: center;
   }
@@ -105,6 +105,11 @@
   nav.active .menu {
     display: block;
     background-color: #fff0bd;
+    padding-block: 3rem;
+    margin-top: -2rem;
+    margin-left: -20px;
+    padding-inline: 1rem;
+    border: #db3a00 solid;
   }
 
   header > nav li > a:after {
@@ -112,6 +117,7 @@
   }
   nav.active .menu li {
     margin: 0px 10px;
+    padding-block: 5px;
   }
 
   nav.active .menu a {
@@ -120,9 +126,13 @@
 
   nav.active .menu li {
     color: #db3a00;
+    list-style:;
+  }
+  nav.active .menu li a {
+    color: #db3a00;
   }
 
-  @media (width > 600px) {
+  @media (width > 1087px) {
     .burger {
       display: none;
     }
