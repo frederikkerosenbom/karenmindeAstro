@@ -1,5 +1,131 @@
 ---
-
+import Image from "astro/components/Image.astro";
+import LogoKlein from "../img/klein_logo_1000x548px 1.webp";
+import LogoKMK from "../img/KMK logo sort 2.webp";
 ---
 
-<section></section>
+<aside class="side-rail" aria-label="Side navigation">
+  <a class="logo top" href="#">
+    <Image src={LogoKlein} alt="Klein" class="img" />
+  </a>
+
+  <div class="arrow" aria-hidden="true">
+    <span class="head" id="sideRail1"></span>
+    <span class="line" id="sideRail"></span>
+  </div>
+
+  <a class="logo bottom" href="#">
+    <Image src={LogoKMK} alt="KMK" class="img" />
+  </a>
+</aside>
+
+<style>
+  .nav {
+    width: 4rem;
+  }
+  .side-rail {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: clamp(3.5rem, 5vw, 5rem);
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    z-index: 50;
+    pointer-events: auto;
+    position: fixed;
+  }
+
+  .logo {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  .img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 10px;
+    filter: brightness(0) saturate(100%) invert(94%) sepia(18%) saturate(650%) hue-rotate(334deg) brightness(104%) contrast(101%);
+  }
+  .side-rail.orange .img {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(96%) saturate(3500%) hue-rotate(11deg) brightness(88%) contrast(98%);
+  }
+  .bottom .img {
+    max-width: 2rem;
+  }
+
+  .arrow .head {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid #fff0bd;
+    opacity: 0.9;
+    transition: color 0.25s ease;
+  }
+  .arrow {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow .line {
+    width: 3px;
+    height: 100%;
+    background: #fff0bd;
+    opacity: 0.8;
+    border-radius: 999px;
+    transition: color 0.25s ease;
+  }
+
+  .side-rail.orange .line {
+    background: #d84315;
+  }
+
+  .side-rail.orange .head {
+    border-bottom-color: #d84315;
+  }
+
+  /* Mobil:  */
+  @media (max-width: 480px) {
+    .side-rail {
+      width: 3.25rem;
+      padding: 0.75rem 0.4rem;
+    }
+    .arrow .head {
+      border-left-width: 6px;
+      border-right-width: 6px;
+      border-top-width: 10px;
+    }
+  }
+</style>
+
+<script>
+  const sideRail = document.querySelector(".side-rail");
+
+  if (sideRail) {
+    function onScroll() {
+      const scrollTop = window.scrollY;
+      const viewport = window.innerHeight;
+      const fullHeight = document.documentElement.scrollHeight;
+      const sideRail = document.querySelector(".side-rail")!;
+      const threshold = 300;
+      const nearBottom = scrollTop + viewport >= fullHeight - threshold;
+
+      sideRail.classList.toggle("orange", nearBottom);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+  }
+</script>

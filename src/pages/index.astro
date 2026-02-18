@@ -4,6 +4,7 @@ import SektionTo from "../components/SektionTo.astro";
 import Hero from "../components/Hero.astro";
 import Medier from "../components/Medier.astro";
 import Footer from "../components/Footer.astro";
+import KleinNav from "../components/KleinNav.astro";
 ---
 
 <html lang="en">
@@ -23,7 +24,14 @@ import Footer from "../components/Footer.astro";
   <body>
     <Hero />
     <SektionTo />
+    <KleinNav class="stick" />
     <Medier />
     <Footer />
   </body>
 </html>
+
+<style>
+  .stick {
+    position: sticky;
+  }
+</style>
