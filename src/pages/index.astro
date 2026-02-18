@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import Samarbejde from "../components/Samarbejde.astro";
 import AboutFood from "../components/Aboutfood.astro";
 import Arrangementer from "../components/Arrangementer.astro";
+import KleinNav from "../components/KleinNav.astro";
 ---
 
 <html lang="en">
@@ -29,7 +30,14 @@ import Arrangementer from "../components/Arrangementer.astro";
     <AboutFood />
     <Arrangementer />
     <Samarbejde />
+    <KleinNav class="stick" />
     <Medier />
     <Footer />
   </body>
 </html>
+
+<style>
+  .stick {
+    position: sticky;
+  }
+</style>

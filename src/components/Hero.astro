@@ -5,15 +5,21 @@ import Subtract from "../img/subtract.svg";
 import Header from "../components/Header.astro";
 ---
 
-<!-- <h1>CAFE</h1> -->
 <section class="hero">
   <Image src={Fredagsbar} alt="fredagsbar" class="bg" />
-  <Image src={Subtract} alt="logo" class="overlay" />
+  <div class="overlay1">
+    <Image src={Subtract} alt="logo" class="overlay" />
+  </div>
   <Header class="nav" />
   <h1>CAFE</h1>
 </section>
 
 <style>
+  .h1 {
+    z-index: 999;
+    color: #fff0bd;
+  }
+
   .hero {
     position: relative;
     height: 100vh;
@@ -32,20 +38,61 @@ import Header from "../components/Header.astro";
   .overlay {
     position: absolute;
     inset: 0;
-    /* background: #d84300; */
-    z-index: 1;
+    z-index: 2;
     height: 95vh;
-    width: 85vw;
+    width: 80vw;
     place-self: center;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
   }
-
+  .overlay1 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    height: 95vh;
+    width: 80vw;
+    place-self: center;
+    background: linear-gradient(to bottom, #db3a00 0%, #db3a00 35%, transparent 40%, transparent 60%, #db3a00 70%, #db3a00 100%);
+  }
   .nav {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+  }
+
+  @media (width > 1087px) {
+    .overlay {
+      object-fit: cover;
+      width: 85vw;
+      place-self: center;
+    }
+    .overlay1 {
+      background: none;
+      width: 85vw;
+    }
+  }
+
+  @media (width < 1087px) {
+    .overlay1 {
+      background: linear-gradient(to bottom, #db3a00 0%, #db3a00 15%, transparent 10%, transparent 70%, #db3a00 85%, #db3a00 100%);
+    }
+  }
+  @media (width < 883px) {
+    .overlay1 {
+      background: linear-gradient(to bottom, #db3a00 0%, #db3a00 25%, transparent 30%, transparent 70%, #db3a00 75%, #db3a00 100%);
+    }
+  }
+
+  @media (width < 630px) {
+    .overlay1 {
+      background: linear-gradient(to bottom, #db3a00 0%, #db3a00 35%, transparent 40%, transparent 65%, #db3a00 70%, #db3a00 100%);
+    }
+  }
+  @media (width < 630px) {
+    .overlay1 {
+      background: linear-gradient(to bottom, #db3a00 0%, #db3a00 38%, transparent 50%, transparent 58%, #db3a00 62%, #db3a00 100%);
+    }
   }
 </style>
