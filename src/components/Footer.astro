@@ -2,34 +2,122 @@
 import Image from "astro/components/Image.astro";
 
 import Karen from "../assets/karen_footer.webp";
-
 import FooterLogo from "../assets/logo_footer.webp";
 ---
 
 <footer>
-  <div class="">
+  <div class="footer_content">
+    <!-- Karen image -->
     <Image src={Karen} alt="" class="karen_pic" />
+
+    <!-- Right column -->
+    <div class="footer_right">
+      <h3>KONTAKT</h3>
+      <p>
+        Karens Minde Kulturhus<br />
+        Wagnersvej 19<br />
+        2450 København SV
+      </p>
+
+      <ul class="footer_links">
+        <li>Kort</li>
+        <li>Find medarbejder</li>
+        <li>Nyhedsbrev</li>
+        <li>Bliv frivillig</li>
+        <li>Privatlivspolitik</li>
+      </ul>
+    </div>
   </div>
-  <h1>Hello</h1>
-  <h2>KARENS MINDE</h2>
-  <p>Vi er også:</p>
-  <p>--> Sydhavnens bibliotek</p>
-  <div class="">
-    <Image src={FooterLogo} alt="" class="pic2" />
+  <div class="footer_left">
+    <div class="footer_text">
+      <h3>KARENS MINDE</h3>
+      <p>Vi er også:</p>
+      <ul>
+        <li>Sydhavnens bibliotek</li>
+        <li>Børnekulturhuset</li>
+        <li>Sydhavn Teater</li>
+        <li>Byens Genbrug</li>
+        <li>Kgs. Enghave Lokalhistoriske Arkiv</li>
+        <li>Kongens Enghave Lokaludvalg</li>
+      </ul>
+    </div>
+
+    <Image src={FooterLogo} alt="" class="footer_logo" />
   </div>
 </footer>
+
 <style>
-  * {
-    background-color:;
-  }
-  .karen_pic {
-    margin-top: -12%;
+  footer {
+    background-color: #f5e4b8;
+    padding: 2% 10%;
+    color: black;
   }
 
-  footer {
-    background-color: #fff0bd;
-    color: white;
-    padding: 2rem;
-    text-align: center;
+  .footer_content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .karen_pic {
+    width: 80%;
+    position: relative;
+    margin-top: -14%;
+  }
+
+  .footer_right {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h3 {
+    color: #e03a00;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer_links li::before {
+    content: "→ ";
+  }
+
+  .footer_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20%;
+  }
+  .footer_logo {
+    padding-left: 30%;
+  }
+  @media (max-width: 768px) {
+    .footer_content {
+      flex-direction: column;
+    }
+
+    .footer_left {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .karen_pic {
+      width: 100%;
+      margin-top: -30%; /* remove negative margin on mobile */
+    }
+
+    .footer_logo {
+      padding-left: 0;
+      width: 60%;
+    }
   }
 </style>

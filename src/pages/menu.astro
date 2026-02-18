@@ -1,0 +1,80 @@
+---
+import "../styles/global.css";
+import MenuSection from "../components/MenuSection.astro";
+import MenuItem from "../components/MenuItem.astro";
+import MenuTitle from "../components/MenuTitle.astro";
+import Header from "../components/Header.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Menu</title>
+  </head>
+
+  <body>
+    <Header />
+    <MenuTitle />
+    <div class="menu-page">
+      <MenuSection title="MAD">
+        <MenuItem name="Åben Sandwich (varierer)" price="20 kr" />
+        <MenuItem name="Hjemmebagt bolle" price="20 kr" />
+        <MenuItem name="Hjemmebagt kage" price="20 kr" />
+        <MenuItem name="Hjemmebagt cookies" price="20 kr" />
+      </MenuSection>
+
+      <MenuSection title="DRIKKEVARER">
+        <div class="category">VARME</div>
+
+        <MenuItem name="Kaffe el. Te" price="10 kr" />
+        <MenuItem name="Americano" price="25 kr" />
+        <MenuItem name="Latte alm./stor" price="30 kr / 40 kr" />
+        <MenuItem name="Espresso" price="20 kr" />
+        <MenuItem name="Cortado" price="25 kr" />
+        <MenuItem name="Flat white" price="25 kr" />
+        <MenuItem name="Cappuccino" price="30 kr" />
+        <div class="category"></div>
+        <MenuItem name="Chai" price="40 kr" />
+        <MenuItem name="Varm chokolade m. flødeskum" price="25 kr" />
+        <MenuItem name="Varm chokolade u. flødeskum" price="40 kr" />
+        <div class="category"></div>
+        <MenuItem name="Iskaffe" price="40 kr" />
+        <MenuItem name="Affogato" price="35 kr" />
+
+        <div class="category">KOLDE</div>
+
+        <MenuItem name="Økovand" price="30 kr" />
+        <MenuItem name="Juice" price="35 kr" />
+        <MenuItem name="Mælk" price="10 kr" />
+        <div class="category"></div>
+        <MenuItem name="Fadøl, Pilsner øko" price="33 kr / 55 kr" />
+        <MenuItem name="Fadøl, Special øl." price="45 kr / 60 kr" />
+        <MenuItem name="Flaske, Pilsner øko m./ u. alkohol." price="35 kr" />
+        <MenuItem name="Flaske, Special øl m./ u. alkohol" price="45 kr" />
+        <div class="category"></div>
+        <MenuItem name="Husets vin glas/flaske" price="55 kr / 225 kr" />
+        <MenuItem name="Karens luksusvin glas/flaske" price="75 kr / 300 kr" />
+      </MenuSection>
+    </div>
+  </body>
+</html>
+
+<style>
+  .menu-page {
+    background: #d73700;
+    padding: 80px 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .category {
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+</style>

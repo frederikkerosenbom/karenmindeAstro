@@ -1,0 +1,38 @@
+---
+import Image from "astro/components/Image.astro";
+import KarenBg from "../assets/karen_bg.svg";
+---
+
+<div class="menu-hero">
+  <Image src={KarenBg} alt="logo" class="overlay" />
+  <h2>MENU</h2>
+</div>
+
+<style>
+  .menu-hero {
+    position: relative;
+    background: #d73700;
+    text-align: center;
+    padding: 100px 20px 60px;
+    margin-top: 15%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: -90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: none;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .menu-hero h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 80px;
+    color: #ffe6b0;
+  }
+</style>
