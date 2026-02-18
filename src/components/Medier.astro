@@ -12,16 +12,21 @@ import ImageFem from "../assets/medie_5.webp";
 ---
 
 <section class="medier_style">
-  <h2>FØLG MED I HVERDAGEN</h2>
   <section class="sociale_medier">
-    <Image src={ImageInstagram} alt="" class="pic1" />
-    <Image src={ImageFacebook} alt="" class="pic2" />
+    <h2>FØLG MED I HVERDAGEN</h2>
+    <a href="https://www.instagram.com/karens_minde/?hl=da" target="_blank" rel="noopener noreferrer">
+      <Image src={ImageInstagram} alt="Instagram" class="pic1" />
+    </a>
+
+    <a href="https://www.facebook.com/KarensMindeKulturhus/?locale=da_DK" target="_blank" rel="noopener noreferrer">
+      <Image src={ImageFacebook} alt="Facebook" class="pic2" />
+    </a>
   </section>
 
   <div class="gallery">
     <div class="row top">
-      <Image src={ImageEn} alt="" class="pic1" />
-      <Image src={ImageTo} alt="" class="pic2" />
+      <Image src={ImageEn} alt="" class="" />
+      <Image src={ImageTo} alt="" class="" />
     </div>
 
     <div class="row bottom">
@@ -33,18 +38,29 @@ import ImageFem from "../assets/medie_5.webp";
 </section>
 <style>
   /******************** Reset ***********************/
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+  .sociale_medier {
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .sociale_medier h2 {
+    margin: 0;
+    white-space: nowrap;
   }
   /*** padding ***/
+  .pic1,
+  .pic2 {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .pic1:hover,
+  .pic2:hover {
+    transform: scale(1.05);
+  }
+
   .medier_style {
     padding-left: 10%;
     padding-right: 10%;
@@ -55,9 +71,6 @@ import ImageFem from "../assets/medie_5.webp";
     background-color: #db3a00;
   }
 
-  .sociale_medier {
-    max-width: 36px;
-  }
   /*****medie billed flex ****/
   .gallery {
     display: flex;
@@ -88,5 +101,23 @@ import ImageFem from "../assets/medie_5.webp";
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pic1,
+    .pic2,
+    .pic3,
+    .pic4,
+    .pic5 {
+      flex: none;
+    }
+    .sociale_medier h2 {
+      white-space: wrap;
+    }
   }
 </style>

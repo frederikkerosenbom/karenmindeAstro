@@ -1,0 +1,49 @@
+---
+import Image from "astro/components/Image.astro";
+
+import Samarbejde1 from "../assets/samarbejde1.webp";
+import Samarbejde2 from "../assets/samarbejde2.webp";
+
+import Samarbejde3 from "../assets/samarbejde3.webp";
+---
+
+<div class="grid_1-1-1">
+  <div>
+    <h5>SAMARBEJDER</h5>
+    <Image src={Samarbejde2} alt="" class="picB" />
+    <Image src={Samarbejde1} alt="" class="picA" />
+  </div>
+
+  <div>
+    <h5>GAVEKORT</h5>
+    <p>Giv en Sydhavns-</p>
+    <p>oplevelse til en ven.</p>
+
+    <p class="gap_top">Gavekortet kan købes</p>
+    <p>fysisk i caféen.</p>
+  </div>
+
+  <div>
+    <h5>SMILEY</h5>
+    <p>Se kontrolrapport her</p>
+    <Image src={Samarbejde3} alt="" class="pic5" />
+  </div>
+</div>
+
+<style>
+  .picA,
+  .picB {
+    display: block;
+    margin: 0 auto;
+  }
+  .gap_top {
+    padding-top: 5%;
+  }
+
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+import Image from "astro/components/Image.astro";
+
+import Picround from "../assets/pic-round.webp";
+---
+
+<div class="grid_1-1">
+  <div class="pic_food">
+    <Image src={Picround} alt="" class="" />
+  </div>
+
+  <div class="text_food">
+    <h2>VORES HÅNDVÆRK</h2>
+    <p>Vi laver alt fra bunden med gode råvarer og stor kærlighed til håndværket. Vores køkken er inspireret af både globale smage og danske klassikere, med fokus på økologi, kvalitet og smukke anretninger.</p>
+  </div>
+  <style>
+    .pic_food {
+      padding-left: 20%;
+    }
+
+    .text_food {
+      padding-right: 20%;
+    }
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5%;
+      padding-top: 5%;
+    }
+
+    @media (max-width: 768px) {
+      .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-left: 10%;
+      }
+      .text_food {
+        order: 1;
+      }
+
+      .pic_food {
+        order: 2;
+      }
+    }
+  </style>
+</div>

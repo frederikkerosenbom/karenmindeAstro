@@ -1,0 +1,118 @@
+---
+import Arrangementer1 from "../assets/Arrangementer1.webp";
+import Arrangementer2 from "../assets/Arrangementer2.webp";
+import Arrangementer3 from "../assets/Arrangementer3.webp";
+import Arrangementer4 from "../assets/Arrangementer4.webp";
+
+const slides = [{ img: Arrangementer1 }, { img: Arrangementer2 }, { img: Arrangementer3 }, { img: Arrangementer4 }];
+---
+
+<section class="events">
+  <h2>FASTE ARRANGEMENTER</h2>
+  <p>Se alle arrangementer i kalenderen</p>
+
+  <div class="slider">
+    <button class="arrow left" id="prev">❮</button>
+
+    <div class="viewport">
+      <div class="track">
+        {
+          slides.map((slide) => (
+            <div class="card">
+              <img src={slide.img.src} alt="" />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <button class="arrow right" id="next">❯</button>
+  </div>
+</section>
+
+<style>
+  .events {
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .viewport {
+    overflow: hidden;
+    width: 900px;
+  }
+
+  .track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+  }
+
+  .card {
+    flex: 0 0 280px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .arrow {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .slider {
+      gap: 10px;
+    }
+
+    .viewport {
+      width: 100%;
+    }
+
+    .card {
+      flex: 0 0 100%;
+    }
+
+    .arrow {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script>
+  const track = document.querySelector(".track") as HTMLElement;
+  const cards = document.querySelectorAll(".card");
+  const next = document.getElementById("next") as HTMLButtonElement;
+  const prev = document.getElementById("prev") as HTMLButtonElement;
+
+  let index = 0;
+  const visibleCards = 3;
+  const cardWidth = 300;
+
+  next.addEventListener("click", () => {
+    if (index < cards.length - visibleCards) {
+      index++;
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+  });
+
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+  });
+</script>
